@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def home_page():
-    return app.send_static_file('index.html')
+    return render_template('index.html')
 @app.route('/author')
 def about_author():
     return 'This webpage have been created by Michal Madera'
